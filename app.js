@@ -4,11 +4,13 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import session from 'express-session';
 
+import connect from './schemas';
 import indexRouter from './routes';
 
 require('dotenv').config();
 
 const app = express();
+connect();
 
 app.use(logger('dev'));
 app.use(express.json());
